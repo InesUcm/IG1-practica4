@@ -1,0 +1,17 @@
+
+*.vsidx
+*.ipch
+*.opendb
+*.db
+*.db-shm
+*.db-wal
+*.pdb
+*.obj
+*.lastbuildstate
+*.ilk
+*.idb
+*.log
+*.tlog
+*.recipe
+*.exe
+.vs/IGProjects_x64_VS2022/v17/.suo
