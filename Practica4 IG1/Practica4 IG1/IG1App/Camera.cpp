@@ -20,16 +20,29 @@ Camera::Camera(Viewport* vp)
 	setAxes();
 }
 
-void Camera::uploadVM() const 
-{ 
-	Shader::setUniform4All("modelView", mViewMat); 
-	Shader::setUniform4All("lightDir", glm::vec3(-1, -1.5, -1.25));
+void Camera::uploadVM() const
+{
+	// Sube la matriz de vista a todos los shaders
+	Shader::setUniform4All("modelView", mViewMat);
+
+	// Apt. 58: lightDir en coordenadas mundo → transformar a coordenadas de vista
+	// w=0 porque es una dirección (no un punto), así la traslación de la vista no afecta
+	// Normalizamos el resultado porque el shader asume que llega normalizado
+	// Solo al shader simple_light para no generar errores en los demás
+	glm::vec4 lightDirWorld = glm::normalize(glm::vec4(-1.0f, -1.5f, -1.25f, 0.0f));
+	glm::vec4 lightDirView = glm::normalize(mViewMat * lightDirWorld);
+	Shader* ls = Shader::get("simple_light");
+	if (ls) {
+		ls->use();
+		ls->setUniform("lightDir", lightDirView);
+	}
 }
 
 void Camera::setVM()
 {
-	mViewMat = lookAt(mEye, mLook, mUp); // glm::lookAt defines the view matrix
+	mViewMat = lookAt(mEye, mLook, mUp);
 	setAxes();
+	setPM();
 }
 
 void Camera::set2D()
@@ -37,10 +50,7 @@ void Camera::set2D()
 	mEye = { 0, 0, 500 };
 	mLook = { 0, 0, 0 };
 	mUp = { 0, 1, 0 };
-	//damos valor a mRadio y mAng
-	mRadio = 500.0;
-	mAng = 90.0;
-
+	mRadio = 500.0; mAng = 90.0;
 	setVM();
 }
 
@@ -49,90 +59,69 @@ void Camera::set3D()
 	mEye = { 500, 500, 500 };
 	mLook = { 0, 10, 0 };
 	mUp = { 0, 1, 0 };
-	//damos valor a mRadio y mAng
-	mRadio = 707.1;
-	mAng = 45.0;
-
+	mRadio = 707.1; mAng = 45.0;
 	setVM();
 }
 
 void Camera::setCenital()
 {
-	//colocamos el ojo en el eje Y
 	mEye = { 0, 500, 0 };
 	mLook = { 0, 0, 0 };
 	mUp = { 0, 0, -1 };
-
-	mRadio = 500.0;
-	mAng = 90.0;
-
+	mRadio = 500.0; mAng = 90.0;
 	setVM();
 }
 
-void Camera::pitch(GLfloat a) 
-{ 
-	mViewMat = rotate(mViewMat, radians(a), vec3(1.0f, 0.0f, 0.0f)); 
-	// glm::rotate returns mViewMat * rotationMatrix
-	setAxes();
-}
-void Camera::yaw(GLfloat a) 
-{ 
-	mViewMat = rotate(mViewMat, radians(a), vec3(0.0f, 1.0f, 0.0f)); 
-	// glm::rotate returns mViewMat * rotationMatrix
-	setAxes();
-}
-void Camera::roll(GLfloat a) 
+void Camera::pitch(GLfloat a)
 {
-	mViewMat = rotate(mViewMat, radians(a), vec3(0.0f, 0.0f, 1.0f)); 
-	// glm::rotate returns mViewMat * rotationMatrix
+	mViewMat = rotate(mViewMat, radians(a), vec3(1.0f, 0.0f, 0.0f));
+	setAxes();
+}
+void Camera::yaw(GLfloat a)
+{
+	mViewMat = rotate(mViewMat, radians(a), vec3(0.0f, 1.0f, 0.0f));
+	setAxes();
+}
+void Camera::roll(GLfloat a)
+{
+	mViewMat = rotate(mViewMat, radians(a), vec3(0.0f, 0.0f, 1.0f));
 	setAxes();
 }
 
 void Camera::setSize(GLdouble xw, GLdouble yh)
 {
-	xRight = xw / 2.0;
-	xLeft = -xRight;
-	yTop = yh / 2.0;
-	yBot = -yTop;
+	xRight = xw / 2.0; xLeft = -xRight;
+	yTop = yh / 2.0; yBot = -yTop;
 	setPM();
 }
 
 void Camera::setScale(GLdouble s)
 {
 	mScaleFact -= s;
-	if (mScaleFact < 0.0) mScaleFact = 0.01; 
+	if (mScaleFact < 0.0) mScaleFact = 0.01;
 	setPM();
 }
 
 void Camera::setPM()
 {
-	//mira si la proyeccion es ortogonal o en perspectiva
-	if (bOrto) {//  if orthogonal projection
+	if (bOrto) {
 		mProjMat = ortho(
-			xLeft * mScaleFact,
-			xRight * mScaleFact,
-			yBot * mScaleFact,
-			yTop * mScaleFact,
-			mNearVal,
-			mFarVal);
-		// glm::ortho defines the orthogonal projection matrix
+			xLeft * mScaleFact, xRight * mScaleFact,
+			yBot * mScaleFact, yTop * mScaleFact,
+			mNearVal, mFarVal);
 	}
-	else {//proyeccion en perspectiva
-		// Dibudimos los límites por 500 para que se vea en grande la perspectiva
+	else {
+		// Ratio correcto según la profesora: nearVal / dist(ojo, look)
+		GLdouble dist = glm::length(mEye - mLook);
+		GLdouble ratio = mNearVal / dist;
 		mProjMat = frustum(
-			(xLeft / 500.0) * mScaleFact,
-			(xRight / 500.0) * mScaleFact,
-			(yBot / 500.0) * mScaleFact,
-			(yTop / 500.0) * mScaleFact,
-			mNearVal,
-			mFarVal);
+			xLeft * mScaleFact * ratio, xRight * mScaleFact * ratio,
+			yBot * mScaleFact * ratio, yTop * mScaleFact * ratio,
+			mNearVal, mFarVal);
 	}
 }
 
-void Camera::uploadPM() const 
-{ 
-	Shader::setUniform4All("projection", mProjMat); 
-}
+void Camera::uploadPM() const { Shader::setUniform4All("projection", mProjMat); }
 
 void Camera::upload() const
 {
@@ -141,60 +130,69 @@ void Camera::upload() const
 	uploadPM();
 }
 
-void Camera::setAxes() {
+void Camera::setAxes()
+{
 	mRight = row(mViewMat, 0);
 	mUpward = row(mViewMat, 1);
 	mFront = -row(mViewMat, 2);
 }
 
-void Camera::moveLR(GLfloat cs) {
+void Camera::moveLR(GLfloat cs)
+{
 	mEye += mRight * (float)cs;
 	mLook += mRight * (float)cs;
-	setVM(); // Reconstruye la matriz con los nuevos puntos y llama a setAxes()
+	setVM();
 }
-void Camera::moveFB(GLfloat cs) {
+void Camera::moveFB(GLfloat cs)
+{
 	mEye += mFront * (float)cs;
 	mLook += mFront * (float)cs;
 	setVM();
 }
-void Camera::moveUD(GLfloat cs) {
+void Camera::moveUD(GLfloat cs)
+{
 	mEye += mUpward * (float)cs;
 	mLook += mUpward * (float)cs;
 	setVM();
 }
 
-void Camera::changePrj(){
-	bOrto = !bOrto;//cambia la perspectiva
-	setPM(); 
-}
+void Camera::changePrj() { bOrto = !bOrto; setPM(); }
 
+// Corrección profesora: pitchReal rota mUp sobre mRight
 void Camera::pitchReal(GLfloat cs)
 {
-	//Calculamos el vector que va del ojo al objetivo
 	glm::vec3 focus = mLook - mEye;
-	//Lo rotamos usando el eje derecho de la cámara
-	focus = rotate(glm::mat4(1.0f), glm::radians(cs), mRight) * glm::vec4(focus, 0.0f);
-	//El nuevo mLook es la posición del ojo + el nuevo vector rotado
+	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mRight);
+	focus = glm::vec3(rot * glm::vec4(focus, 0.0f));
 	mLook = mEye + focus;
+	mUp = glm::vec3(rot * glm::vec4(mUp, 0.0f));
 	setVM();
 }
+
+// Corrección profesora: yawReal rota mUp sobre mUpward
 void Camera::yawReal(GLfloat cs)
 {
 	glm::vec3 focus = mLook - mEye;
-	focus = rotate(glm::mat4(1.0f), glm::radians(cs), mUpward) * glm::vec4(focus, 0.0f);
+	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mUpward);
+	focus = glm::vec3(rot * glm::vec4(focus, 0.0f));
 	mLook = mEye + focus;
-	setVM();
-}
-void Camera::rollReal(GLfloat cs)
-{
-	mUp = rotate(glm::mat4(1.0f), glm::radians(cs), mFront) * glm::vec4(mUp, 0.0f);
+	mUp = glm::vec3(rot * glm::vec4(mUp, 0.0f));
 	setVM();
 }
 
-void Camera::orbit(GLdouble incAng, GLdouble incY) {
+void Camera::rollReal(GLfloat cs)
+{
+	mUp = glm::vec3(rotate(glm::mat4(1.0f), glm::radians(cs), mFront) * glm::vec4(mUp, 0.0f));
+	setVM();
+}
+
+// Corrección profesora: orbit actualiza mUp
+void Camera::orbit(GLdouble incAng, GLdouble incY)
+{
 	mAng += incAng;
-	mEye.x = mLook.x + cos(radians(mAng)) * mRadio;
-	mEye.z = mLook.z - sin(radians(mAng)) * mRadio;
-	mEye.y += incY;
+	mEye.x = mLook.x + (float)(cos(radians(mAng)) * mRadio);
+	mEye.z = mLook.z - (float)(sin(radians(mAng)) * mRadio);
+	mEye.y += (float)incY;
+	mUp = { 0, 1, 0 };
 	setVM();
 }

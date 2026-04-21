@@ -1,4 +1,4 @@
-#ifndef _H_Scene_H_
+﻿#ifndef _H_Scene_H_
 #define _H_Scene_H_
 
 #include <GL/glew.h>
@@ -20,8 +20,11 @@ public:
 
 	virtual void init();
 	virtual void update();
-
 	virtual void render(Camera const& cam) const;
+
+	// Llamado por display() ANTES de glClear para establecer el color de fondo.
+	// Cada escena puede sobrescribirlo. Por defecto: azul claro.
+	virtual void setClearColor() const { glClearColor(0.6f, 0.7f, 0.8f, 1.0f); }
 
 	void load();
 	void unload();
@@ -34,37 +37,37 @@ protected:
 	std::vector<Abs_Entity*> gObjects;
 };
 
-class Scene1 : public Scene {
-public:
-	void init() override;
-};
-
-class Scene2 : public Scene {
-public:
-	void init() override;
-};
-
-class Scene3 : public Scene {
-public:
-	void init() override;
-};
+class Scene1 : public Scene { public: void init() override; };
+class Scene2 : public Scene { public: void init() override; };
+class Scene3 : public Scene { public: void init() override; };
 
 class Scene4 : public Scene {
 public:
 	void init() override;
 	void render(Camera const& cam) const override;
-	//sobrescribimos update para que no se acyualice la foto en cada frame
 	void update() override;
-	//booleano para saber si la foto ya ha sido capturada 
-	//false = ya ha sido capturada, no hay que capturarla ora vez
-	//true = la escena se ha movido y hay que capturar la foto otra vez
 	mutable bool mCaptureNext = false;
-	//metodo para indicar que hay que capturar la foto otra vez
 	void setCapture() { mCaptureNext = true; }
 };
 
-class Scene5 : public Scene {
+class Scene5 : public Scene { public: void init() override; };
+class Scene6 : public Scene { public: void init() override; };
+class Scene7 : public Scene { public: void init() override; };
+
+class Scene8 : public Scene {
 public:
 	void init() override;
+	void render(Camera const& cam) const override;
+	void update() override;
+
+	// Fondo negro solo para esta escena
+	void setClearColor() const override { glClearColor(0.0f, 0.0f, 0.0f, 1.0f); }
+
+	void rotate(); // tecla F: droide gira sobre sí mismo (nodo ficticio en Y)
+	void orbit();  // tecla G: droide avanza por la superficie (nodo ficticio en X)
+
+private:
+	CompoundEntity* mNodoFicticio = nullptr; // acceso directo al nodo ficticio
 };
+
 #endif //_H_Scene_H_

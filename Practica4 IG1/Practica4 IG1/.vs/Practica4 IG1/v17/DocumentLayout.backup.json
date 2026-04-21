@@ -1,69 +1,81 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\",
+  "WorkspaceRootPath": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IndexMesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IndexMesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RevolutionObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RevolutionObjects.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RevolutionObjects.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects3D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\objects3D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects3D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\objects3D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IndexMesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IndexMesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\objects2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -74,15 +86,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
+              "Title": "objects3D.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects3D.cpp",
+              "RelativeDocumentMoniker": "IG1App\\objects3D.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects3D.cpp",
+              "RelativeToolTip": "IG1App\\objects3D.cpp",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAowKoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-21T13:30:20.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "objects3D.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects3D.h",
+              "RelativeDocumentMoniker": "IG1App\\objects3D.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects3D.h",
+              "RelativeToolTip": "IG1App\\objects3D.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowCwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-21T13:30:08.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IG1App.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.h",
+              "RelativeDocumentMoniker": "IG1App\\IG1App.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.h",
+              "RelativeToolTip": "IG1App\\IG1App.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADYAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-20T10:17:58.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Shader.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.h",
               "RelativeDocumentMoniker": "IG1App\\Shader.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.h",
               "RelativeToolTip": "IG1App\\Shader.h",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -91,195 +143,186 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "Shader.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.cpp",
               "RelativeDocumentMoniker": "IG1App\\Shader.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Shader.cpp",
               "RelativeToolTip": "IG1App\\Shader.cpp",
               "ViewState": "AgIAAHkAAAAAAAAAAAAjwIkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-17T16:19:16.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T16:19:16.057Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "Camera.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.h",
               "RelativeDocumentMoniker": "IG1App\\Camera.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.h",
               "RelativeToolTip": "IG1App\\Camera.h",
               "ViewState": "AgIAACYAAAAAAAAAAAAjwDIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-17T16:08:20.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T16:08:20.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Camera.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.cpp",
               "RelativeDocumentMoniker": "IG1App\\Camera.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Camera.cpp",
               "RelativeToolTip": "IG1App\\Camera.cpp",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAjwBkAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAA2wMUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-17T16:07:57.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Entity.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.cpp",
-              "RelativeDocumentMoniker": "IG1App\\Entity.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.cpp",
-              "RelativeToolTip": "IG1App\\Entity.cpp",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-17T15:32:34.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Entity.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.h",
-              "RelativeDocumentMoniker": "IG1App\\Entity.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.h",
-              "RelativeToolTip": "IG1App\\Entity.h",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-17T16:01:57.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Entity.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.cpp",
+              "RelativeToolTip": "IG1App\\Entity.cpp",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAiwKkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-17T15:32:34.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Entity.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.h",
+              "RelativeDocumentMoniker": "IG1App\\Entity.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Entity.h",
+              "RelativeToolTip": "IG1App\\Entity.h",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-17T16:01:57.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.cpp",
               "RelativeToolTip": "IG1App\\Scene.cpp",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAjwLAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAANAAAAAAAAAAAADwv/cAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-17T15:14:57.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "RevolutionObjects.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.cpp",
               "RelativeDocumentMoniker": "IG1App\\RevolutionObjects.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.cpp",
               "RelativeToolTip": "IG1App\\RevolutionObjects.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAADwv4sAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-17T15:01:46.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "RevolutionObjects.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.h",
               "RelativeDocumentMoniker": "IG1App\\RevolutionObjects.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\RevolutionObjects.h",
               "RelativeToolTip": "IG1App\\RevolutionObjects.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-17T14:56:45.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:56:45.773Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "objects2D.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects2D.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects2D.h",
               "RelativeDocumentMoniker": "IG1App\\objects2D.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects2D.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\objects2D.h",
               "RelativeToolTip": "IG1App\\objects2D.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-17T14:56:55.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:56:55.241Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 3,
               "Title": "IG1App.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.cpp",
               "RelativeDocumentMoniker": "IG1App\\IG1App.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IG1App.cpp",
               "RelativeToolTip": "IG1App\\IG1App.cpp",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAAAFIAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAABAAAAAAAAAADwvycBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-17T14:55:59.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "IndexMesh.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.cpp",
               "RelativeDocumentMoniker": "IG1App\\IndexMesh.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.cpp",
               "RelativeToolTip": "IG1App\\IndexMesh.cpp",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-17T14:20:42.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:20:42.381Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "IndexMesh.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.h",
               "RelativeDocumentMoniker": "IG1App\\IndexMesh.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\IndexMesh.h",
               "RelativeToolTip": "IG1App\\IndexMesh.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-17T14:10:25.071Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:10:25.071Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Mesh.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.cpp",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.cpp",
               "RelativeDocumentMoniker": "IG1App\\Mesh.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.cpp",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.cpp",
               "RelativeToolTip": "IG1App\\Mesh.cpp",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAUwFcAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAOIAAAAAAAAAAAA2wAkBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-17T14:07:50.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "Mesh.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.h",
               "RelativeDocumentMoniker": "IG1App\\Mesh.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Mesh.h",
               "RelativeToolTip": "IG1App\\Mesh.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-17T14:07:49.004Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T14:07:49.004Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "Scene.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.h",
+              "DocumentMoniker": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.h",
               "RelativeDocumentMoniker": "IG1App\\Scene.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\IG1\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.h",
+              "ToolTip": "C:\\Users\\PC de Alexia\\OneDrive\\Documentos\\GitHub\\IG1-practica4\\Practica4 IG1\\Practica4 IG1\\IG1App\\Scene.h",
               "RelativeToolTip": "IG1App\\Scene.h",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAwEMAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAADwv0kAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-17T15:22:36.78Z",
               "EditorCaption": ""
@@ -292,21 +335,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 156,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
             }
           ]
         }

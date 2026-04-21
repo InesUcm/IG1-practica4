@@ -9,6 +9,8 @@
 
 using namespace glm;
 
+// ─── Scene base ───────────────────────────────────────────────────────────────
+
 void Scene::init()
 {
 	setGL();
@@ -21,7 +23,6 @@ Scene::~Scene()
 	resetGL();
 }
 
-// Libera la memoria de todas las entidades
 void Scene::destroy()
 {
 	for (Abs_Entity* el : gObjects) delete el;
@@ -40,8 +41,8 @@ void Scene::unload()
 
 void Scene::setGL()
 {
-	glClearColor(0.6f, 0.7f, 0.8f, 1.0f); // fondo azul claro, totalmente opaco
-	glEnable(GL_DEPTH_TEST);               // activar test de profundidad (z-buffer)
+	glClearColor(0.6f, 0.7f, 0.8f, 1.0f);
+	glEnable(GL_DEPTH_TEST);
 }
 
 void Scene::resetGL()
@@ -52,7 +53,9 @@ void Scene::resetGL()
 
 void Scene::render(Camera const& cam) const
 {
-	cam.upload(); // sube viewport, view matrix y projection matrix
+	// El color de fondo ya fue establecido por setClearColor() y glClear()
+	// en display() ANTES de llamar a render(), así que aquí solo renderizamos.
+	cam.upload();
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
 }
@@ -63,81 +66,70 @@ void Scene::update()
 		obj->update();
 }
 
+// ─── Scene1 ───────────────────────────────────────────────────────────────────
 
 void Scene1::init()
 {
 	setGL();
 	gObjects.push_back(new RGBAxes(400.0));
 
-	// Hexágono magenta
 	RegularPolygon* hexagono = new RegularPolygon(6, 200.0);
 	hexagono->setColor(glm::vec4(255.0f, 0.0f, 255.0f, 1.0f));
 	gObjects.push_back(hexagono);
 
-	// Círculo amarillo
 	RegularPolygon* circulo = new RegularPolygon(50, 200.0);
 	circulo->setColor(glm::vec4(255.0f, 255.0f, 0.0f, 1.0f));
 	gObjects.push_back(circulo);
 }
 
+// ─── Scene2 ───────────────────────────────────────────────────────────────────
 
 void Scene2::init()
 {
 	setGL();
-	const float r = 200.0f; // radio
-
+	const float r = 200.0f;
 	gObjects.push_back(new RGBAxes(400.0));
 
-	// Triángulo desplazado a la derecha
 	RGBTriangle* triangulo = new RGBTriangle(70.0, r);
 	triangulo->setModelMat(translate(mat4(1.0f), vec3(r, 0.0f, 0.0f)));
 	gObjects.push_back(triangulo);
 
-	// Rectángulo
 	gObjects.push_back(new RGBRectangle(280.0, 280.0));
 
-	// Círculo amarillo
 	RegularPolygon* circulo = new RegularPolygon(50, r);
 	circulo->setColor(glm::vec4(255.0f, 255.0f, 0.0f, 1.0f));
 	gObjects.push_back(circulo);
 }
 
+// ─── Scene3 ───────────────────────────────────────────────────────────────────
 
 void Scene3::init()
 {
 	setGL();
 	gObjects.push_back(new RGBAxes(400.0));
-
-	// Cubo
 	gObjects.push_back(new RGBCube(200.0));
 }
 
+// ─── Scene4 ───────────────────────────────────────────────────────────────────
 
 void Scene4::init()
 {
 	setGL();
-
 	gObjects.push_back(new RGBAxes(400.0));
-
-	// Suelo
 	gObjects.push_back(new Ground(400.0, 400.0));
 
-	// Caja con textura exterior e interior
 	BoxOutline* caja = new BoxOutline(100.0);
 	caja->setModelMat(translate(mat4(1.0f), vec3(-100.0f, 50.0f, -100.0f)));
 	gObjects.push_back(caja);
 
-	// Estrella 3D
 	Star3D* estrella = new Star3D(40.0, 8, 40.0);
 	estrella->setModelMat(translate(mat4(1.0f), vec3(-100.0f, 50.0f, -100.0f)));
 	gObjects.push_back(estrella);
 
-	// Cristalera
 	GlassParapet* cristalera = new GlassParapet(400.0);
 	cristalera->setModelMat(scale(mat4(1.0f), vec3(1.0f, 0.5f, 1.0f)));
 	gObjects.push_back(cristalera);
 
-	// Foto sobre el suelo
 	Photo* foto = new Photo(100.0, 75.0);
 	mat4 fotoMat = translate(mat4(1.0f), vec3(0.0f, 1.0f, 0.0f));
 	fotoMat = fotoMat * rotate(mat4(1.0f), radians(-90.0f), vec3(1.0f, 0.0f, 0.0f));
@@ -148,38 +140,109 @@ void Scene4::init()
 void Scene4::render(Camera const& cam) const
 {
 	cam.upload();
-
-	// Renderizar todo excepto el último objeto (la foto).
 	for (size_t i = 0; i + 1 < gObjects.size(); ++i)
 		gObjects[i]->render(cam.viewMat());
-
-	//Si hay que capturar la escena otra vez
 	if (mCaptureNext) {
-		// Capturar el buffer con lo que se acaba de renderizar
 		glFlush();
 		gObjects.back()->update();
-
 		mCaptureNext = false;
 	}
-	// Ahora renderizar la foto con la captura
 	gObjects.back()->render(cam.viewMat());
 }
 
-void
-Scene4::update() {
-	// Solo actualizamos los objetos que NO sean la foto, para avitar carga de la GPU por la foto
-	for (size_t i = 0; i + 1 < gObjects.size(); i++) {
+void Scene4::update()
+{
+	for (size_t i = 0; i + 1 < gObjects.size(); i++)
 		gObjects[i]->update();
-	}
 }
+
+// ─── Scene5: Toro ─────────────────────────────────────────────────────────────
 
 void Scene5::init()
 {
 	setGL();
 	gObjects.push_back(new RGBAxes(400.0));
+	gObjects.push_back(new Torus(100.0, 50.0, 20, 100));
+}
 
-	//Torus
-	Torus* torus = new Torus(100.0, 50.0, 20, 100);
-	torus->setColor(glm::vec4(0, 1, 0, 1));
-	gObjects.push_back(torus);
+// ─── Scene6: IndexedBox ───────────────────────────────────────────────────────
+
+void Scene6::init()
+{
+	setGL();
+	gObjects.push_back(new RGBAxes(400.0));
+	gObjects.push_back(new IndexedBox(200.0));
+}
+
+// ─── Scene7: Droide ───────────────────────────────────────────────────────────
+
+void Scene7::init()
+{
+	setGL();
+	gObjects.push_back(new RGBAxes(400.0));
+	gObjects.push_back(new Droid(80.0));
+}
+
+// ─── Scene8: Planeta Dathomir ─────────────────────────────────────────────────
+//
+// gObjects[0] = RGBAxes
+// gObjects[1] = Sphere granate (planeta)
+// gObjects[2] = mNodoFicticio (CompoundEntity) → contiene el Droid en polo norte
+//
+// setClearColor() establece fondo negro antes del glClear en display()
+// update() llama a orbit() cada frame cuando la animación está activa (tecla U)
+// rotate() y orbit() modifican la matriz del nodo ficticio (teclas F y G)
+
+void Scene8::init()
+{
+	// No llamamos a setGL() porque queremos fondo negro (lo maneja setClearColor)
+	glEnable(GL_DEPTH_TEST);
+
+	gObjects.push_back(new RGBAxes(400.0));
+
+	const float rPlaneta = 200.0f;
+	const float rDroide = 30.0f;
+
+	Sphere* planeta = new Sphere(rPlaneta, 40, 40);
+	planeta->setColor(glm::vec4(171.0f / 255.0f, 33.0f / 255.0f, 72.0f / 255.0f, 1.0f));
+	gObjects.push_back(planeta);
+
+	mNodoFicticio = new CompoundEntity();
+
+	Droid* droide = new Droid(rDroide);
+	droide->setModelMat(translate(mat4(1.0f),
+		vec3(0.0f, rPlaneta + rDroide, 0.0f)));
+	mNodoFicticio->addEntity(droide);
+
+	gObjects.push_back(mNodoFicticio);
+}
+
+void Scene8::render(Camera const& cam) const
+{
+	// El glClearColor(negro) ya fue llamado por setClearColor() en display()
+	cam.upload();
+	for (Abs_Entity* el : gObjects)
+		el->render(cam.viewMat());
+}
+
+void Scene8::update()
+{
+	// Con U activo, el droide orbita automáticamente
+	orbit();
+}
+
+void Scene8::rotate()
+{
+	// Nodo ficticio rota en Y → el droide gira sobre sí mismo
+	glm::mat4 m = mNodoFicticio->modelMat();
+	m = glm::rotate(m, glm::radians(5.0f), glm::vec3(0, 1, 0));
+	mNodoFicticio->setModelMat(m);
+}
+
+void Scene8::orbit()
+{
+	// Nodo ficticio rota en X → el droide avanza por la superficie del planeta
+	glm::mat4 m = mNodoFicticio->modelMat();
+	m = glm::rotate(m, glm::radians(2.0f), glm::vec3(1, 0, 0));
+	mNodoFicticio->setModelMat(m);
 }
