@@ -22,8 +22,6 @@ public:
 	virtual void update();
 	virtual void render(Camera const& cam) const;
 
-	// Llamado por display() ANTES de glClear para establecer el color de fondo.
-	// Cada escena puede sobrescribirlo. Por defecto: azul claro.
 	virtual void setClearColor() const { glClearColor(0.6f, 0.7f, 0.8f, 1.0f); }
 
 	void load();
@@ -60,14 +58,13 @@ public:
 	void render(Camera const& cam) const override;
 	void update() override;
 
-	// Fondo negro solo para esta escena
 	void setClearColor() const override { glClearColor(0.0f, 0.0f, 0.0f, 1.0f); }
 
-	void rotate(); // tecla F: droide gira sobre sí mismo (nodo ficticio en Y)
-	void orbit();  // tecla G: droide avanza por la superficie (nodo ficticio en X)
+	void rotate();
+	void orbit();
 
 private:
-	CompoundEntity* mNodoFicticio = nullptr; // acceso directo al nodo ficticio
+	CompoundEntity* mNodoFicticio = nullptr;
 };
 
 #endif //_H_Scene_H_

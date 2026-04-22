@@ -53,8 +53,6 @@ void Scene::resetGL()
 
 void Scene::render(Camera const& cam) const
 {
-	// El color de fondo ya fue establecido por setClearColor() y glClear()
-	// en display() ANTES de llamar a render(), así que aquí solo renderizamos.
 	cam.upload();
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
@@ -184,18 +182,9 @@ void Scene7::init()
 }
 
 // ─── Scene8: Planeta Dathomir ─────────────────────────────────────────────────
-//
-// gObjects[0] = RGBAxes
-// gObjects[1] = Sphere granate (planeta)
-// gObjects[2] = mNodoFicticio (CompoundEntity) → contiene el Droid en polo norte
-//
-// setClearColor() establece fondo negro antes del glClear en display()
-// update() llama a orbit() cada frame cuando la animación está activa (tecla U)
-// rotate() y orbit() modifican la matriz del nodo ficticio (teclas F y G)
 
 void Scene8::init()
 {
-	// No llamamos a setGL() porque queremos fondo negro (lo maneja setClearColor)
 	glEnable(GL_DEPTH_TEST);
 
 	gObjects.push_back(new RGBAxes(400.0));
@@ -219,7 +208,6 @@ void Scene8::init()
 
 void Scene8::render(Camera const& cam) const
 {
-	// El glClearColor(negro) ya fue llamado por setClearColor() en display()
 	cam.upload();
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
@@ -227,13 +215,11 @@ void Scene8::render(Camera const& cam) const
 
 void Scene8::update()
 {
-	// Con U activo, el droide orbita automáticamente
 	orbit();
 }
 
 void Scene8::rotate()
 {
-	// Nodo ficticio rota en Y → el droide gira sobre sí mismo
 	glm::mat4 m = mNodoFicticio->modelMat();
 	m = glm::rotate(m, glm::radians(5.0f), glm::vec3(0, 1, 0));
 	mNodoFicticio->setModelMat(m);
@@ -241,7 +227,6 @@ void Scene8::rotate()
 
 void Scene8::orbit()
 {
-	// Nodo ficticio rota en X → el droide avanza por la superficie del planeta
 	glm::mat4 m = mNodoFicticio->modelMat();
 	m = glm::rotate(m, glm::radians(2.0f), glm::vec3(1, 0, 0));
 	mNodoFicticio->setModelMat(m);

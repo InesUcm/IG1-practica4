@@ -25,11 +25,10 @@ void Camera::uploadVM() const
 	// Sube la matriz de vista a todos los shaders
 	Shader::setUniform4All("modelView", mViewMat);
 
-	// Apt. 58: lightDir en coordenadas mundo → transformar a coordenadas de vista
-	// w=0 porque es una dirección (no un punto), así la traslación de la vista no afecta
-	// Normalizamos el resultado porque el shader asume que llega normalizado
-	// Solo al shader simple_light para no generar errores en los demás
-	glm::vec4 lightDirWorld = glm::normalize(glm::vec4(-1.0f, -1.5f, -1.25f, 0.0f));
+	// Apt. 58: la dirección de la luz en coordenadas mundiales es (-1, -1.5, -1.25)
+	// (valor exacto del enunciado). Se transforma a coordenadas de vista multiplicando
+	// por mViewMat. w=0 porque es una dirección, no un punto (la traslación no afecta).
+	glm::vec4 lightDirWorld = glm::vec4(-1.0f, -1.5f, -1.25f, 0.0f);
 	glm::vec4 lightDirView = glm::normalize(mViewMat * lightDirWorld);
 	Shader* ls = Shader::get("simple_light");
 	if (ls) {
@@ -111,7 +110,7 @@ void Camera::setPM()
 			mNearVal, mFarVal);
 	}
 	else {
-		// Ratio correcto según la profesora: nearVal / dist(ojo, look)
+		// Ratio: mNearVal / distancia(ojo, look) — corrección de la profesora
 		GLdouble dist = glm::length(mEye - mLook);
 		GLdouble ratio = mNearVal / dist;
 		mProjMat = frustum(
@@ -158,7 +157,7 @@ void Camera::moveUD(GLfloat cs)
 
 void Camera::changePrj() { bOrto = !bOrto; setPM(); }
 
-// Corrección profesora: pitchReal rota mUp sobre mRight
+// pitchReal: rota el vector focus y mUp alrededor de mRight (eje lateral de la cámara)
 void Camera::pitchReal(GLfloat cs)
 {
 	glm::vec3 focus = mLook - mEye;
@@ -169,7 +168,7 @@ void Camera::pitchReal(GLfloat cs)
 	setVM();
 }
 
-// Corrección profesora: yawReal rota mUp sobre mUpward
+// yawReal: rota el vector focus y mUp alrededor de mUpward (eje vertical de la cámara)
 void Camera::yawReal(GLfloat cs)
 {
 	glm::vec3 focus = mLook - mEye;
@@ -186,7 +185,7 @@ void Camera::rollReal(GLfloat cs)
 	setVM();
 }
 
-// Corrección profesora: orbit actualiza mUp
+// orbit: mueve el ojo alrededor de mLook manteniendo mUp = (0,1,0)
 void Camera::orbit(GLdouble incAng, GLdouble incY)
 {
 	mAng += incAng;

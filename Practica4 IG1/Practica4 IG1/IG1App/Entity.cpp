@@ -100,6 +100,9 @@ void EntityWithTexture::render(const glm::mat4& modelViewMat) const
 }
 
 // ─── ColorMaterialEntity ──────────────────────────────────────────────────────
+// Usa el shader "simple_light": iluminación Phong con una luz direccional (lightDir).
+// Camera::uploadVM() sube lightDir al shader cada vez que se mueve la cámara,
+// transformándola de coordenadas mundo a coordenadas vista.
 
 bool ColorMaterialEntity::mShowNormals = false;
 
@@ -119,11 +122,11 @@ void ColorMaterialEntity::render(const glm::mat4& modelViewMat) const
 	upload(aMat);
 	mMesh->render();
 
-	// Apt. 63: renderizar normales como segmentos amarillos si está activado
+	// Apt. 63: normales visibles si está activo (tecla N)
 	if (mShowNormals) {
 		Shader* normShader = Shader::get("normals");
 		normShader->use();
-		upload(aMat); // sube la misma matriz al shader de normales
+		upload(aMat);
 		mMesh->render();
 	}
 }
@@ -132,7 +135,6 @@ void ColorMaterialEntity::render(const glm::mat4& modelViewMat) const
 
 CompoundEntity::~CompoundEntity()
 {
-	// Libera todas las entidades hijas
 	for (Abs_Entity* e : gObjects) delete e;
 	gObjects.clear();
 }
@@ -144,7 +146,6 @@ void CompoundEntity::addEntity(Abs_Entity* ae)
 
 void CompoundEntity::render(const glm::mat4& modelViewMat) const
 {
-	// Acumula la matriz de modelado de esta entidad compuesta antes de pasar a los hijos
 	mat4 aMat = modelViewMat * mModelMat;
 	for (Abs_Entity* e : gObjects)
 		e->render(aMat);
@@ -158,7 +159,6 @@ void CompoundEntity::update()
 
 void CompoundEntity::load()
 {
-	// No hay mMesh propio; carga los hijos
 	for (Abs_Entity* e : gObjects)
 		e->load();
 }

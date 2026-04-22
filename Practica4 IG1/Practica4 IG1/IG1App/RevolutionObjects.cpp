@@ -62,79 +62,70 @@ SphereWithTexture::SphereWithTexture(GLdouble radius, GLuint nParallels, GLuint 
 	mTexture->load(texFile);
 }
 
-// ─── Droid ────────────────────────────────────────────────────────────────────
+// ─── Droid (apt. 68) ──────────────────────────────────────────────────────────
 //
-//  Estructura según el enunciado (apt. 68) y correo de la profesora:
-//
-//  · Esfera texturizada (container.jpg), centrada en el origen.
-//    Su polo norte está en Y = +radius.
-//
-//  · Cono truncado amarillo (cabeza):
-//    - Base inferior r=radius, base superior r=radius/2, altura h=radius.
-//    - generateByRevolution lo genera de Y=0 a Y=h en local.
-//    - Lo trasladamos +radius en Y para que su base coincida con el polo norte.
-//
-//  · Disco amarillo (tapa la base inferior del cono):
-//    - Igual que el cono, su plano local es Y=0.
-//    - Misma traslación +radius en Y → queda pegado al polo norte de la esfera.
-//    - Esto elimina la "franja oscura" que mencionaba la profesora.
-//
-//  · Dos cilindros verdes (brazos), a la altura del ecuador (Y=0):
-//    - Se generan en eje Y local (de 0 a cLen).
-//    - Brazo izquierdo: R(-90°,Z) → eje local Y apunta en -X global.
-//      T(-radius, 0, 0) coloca el inicio en el borde izquierdo de la esfera.
-//    - Brazo derecho: R(+90°,Z) → eje local Y apunta en +X global.
-//      T(+radius, 0, 0) coloca el inicio en el borde derecho de la esfera.
-//    - Orden: T * R (primero se aplica R, luego T — orden de multiplicación).
+// Exactamente según el enunciado:
+//   - Esfera texturizada, centro en el origen
+//   - Cono truncado amarillo: Cone(radius, radius/2, radius/2, nRings, radius)
+//     → h=radius, r_inf=radius/2, r_sup=radius/2 → CILINDRO de radio radius/2 y altura radius
+//     → "con origen en el centro de coordenadas" → sin traslación, base en Y=0
+//     → La cima queda en Y=+radius, que es el polo norte de la esfera
+//   - Correo profesora: añadir un Disk amarillo para tapar la cima (Y=+radius)
+//     porque el cilindro de revolución queda abierto arriba y abajo
+//     La base en Y=0 está dentro de la esfera y no se ve → solo tapamos la cima
+//   - Dos cilindros verdes (0,204,0): apuntan en +Z (revolución en Y → rotamos -90° en X)
+//     posicionados a los lados de la cabeza a la altura de Y=+radius (polo norte)
 
 Droid::Droid(GLdouble radius)
 {
-	// ── 1. Esfera texturizada (cuerpo) ──────────────────────────────────────
+	// ── 1. Cuerpo: esfera texturizada centrada en el origen ───────────────────
 	SphereWithTexture* body = new SphereWithTexture(
 		radius, 20, 20, "..\\assets\\images\\container.jpg");
 	addEntity(body);
 
-	// ── 2. Cono truncado amarillo (cabeza) ──────────────────────────────────
-	// Parámetros: h=radius, r_inf=radius, r_sup=radius/2, nRings=4, nSamples=20
-	// Traslación +radius en Y para colocar la base en el polo norte de la esfera.
-	Cone* hat = new Cone(radius, radius, radius / 2.0, 4, 20);
-	hat->setColor(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
-	hat->setModelMat(
-		glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, (float)radius, 0.0f)));
+	// ── 2. Cabeza: cono truncado (cilindro) amarillo ──────────────────────────
+	// Exactamente Cone(radius, radius/2, radius/2, nRings, nSamples):
+	//   h = radius, r_inf = radius/2, r_sup = radius/2 → cilindro
+	// Sin traslación: la base queda en Y=0 (interior de la esfera, no visible),
+	// la cima queda en Y=+radius (polo norte, sobresale por encima de la esfera).
+	GLdouble h = radius;
+	GLdouble rCyl = radius / 2.0;
+	Cone* hat = new Cone(h, rCyl, rCyl, 4, (GLuint)radius);
+	hat->setColor(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f)); // amarillo
+	// Sin setModelMat → identidad (origen en el centro de la esfera)
 	addEntity(hat);
 
-	// ── 3. Disco amarillo (tapa la base del cono en Y=radius) ───────────────
-	// Radio exterior = radius, radio interior = 0 (disco sólido), 2 anillos, 20 muestras.
-	// Misma traslación +radius en Y que el cono para que coincidan.
-	Disk* baseDisk = new Disk(radius, 0.0, 2, 20);
-	baseDisk->setColor(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
-	baseDisk->setModelMat(
+	// ── 3. Disco tapa: cierra la CIMA del cilindro en Y=+radius ──────────────
+	// El correo de la profesora dice que la cabeza debe ser "completamente amarilla".
+	// generateByRevolution genera el disco en Y=0 con normales en +Y.
+	// Para cerrarlo en la cima (Y=+radius) basta con trasladarlo a Y=+radius;
+	// la normal en +Y es la correcta (mira hacia fuera, hacia arriba).
+	Disk* topDisk = new Disk(rCyl, 0.0, 2, (GLuint)radius);
+	topDisk->setColor(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
+	topDisk->setModelMat(
 		glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, (float)radius, 0.0f)));
-	addEntity(baseDisk);
+	addEntity(topDisk);
 
-	// ── 4. Brazo izquierdo (cilindro verde, apunta en -X) ───────────────────
-	// Longitud y radio proporcionales al tamaño del droide.
-	GLdouble cLen = radius;
-	GLdouble cRad = radius * 0.08;
+	// ── 4 & 5. Cilindros verdes (ojos/antenas) apuntando en +Z ───────────────
+	// Posición: junto a la cima del cilindro dorado (Y ≈ +radius),
+	// desplazados lateralmente en X para que queden uno a cada lado.
+	// generateByRevolution genera en eje Y → rotar -90° en X para que apunten en +Z.
+	// Orden de la matriz: T * R (primero rotamos, luego trasladamos al sitio final).
+	GLdouble cLen = radius * 0.6;       // longitud del ojo
+	GLdouble cRad = radius * 0.1;       // radio del ojo
+	GLdouble offX = radius * 0.25;      // separación lateral entre los dos
+	GLdouble offY = radius;             // misma altura que la cima del cilindro dorado
 
-	// R(-90°, Z): rota el eje Y local para que apunte en -X global.
-	// T(-radius, 0, 0): desplaza al borde izquierdo de la esfera.
-	// El cilindro crece desde X=-radius hasta X=-(radius+cLen).
-	Cone* cyl1 = new Cone(cLen, cRad, cRad, 2, 12);
-	cyl1->setColor(glm::vec4(0.0f, 204.0f / 255.0f, 0.0f, 1.0f));
-	cyl1->setModelMat(
-		glm::translate(glm::mat4(1.0f), glm::vec3(-(float)radius, 0.0f, 0.0f))
-		* glm::rotate(glm::mat4(1.0f), glm::radians(-90.0f), glm::vec3(0.0f, 0.0f, 1.0f)));
-	addEntity(cyl1);
+	for (int lado : {-1, 1}) {
+		Cone* cyl = new Cone(cLen, cRad, cRad, 3, 12); // r_inf==r_sup → cilindro puro
+		cyl->setColor(glm::vec4(0.0f, 204.0f / 255.0f, 0.0f, 1.0f)); // verde (0,204,0)
 
-	// ── 5. Brazo derecho (cilindro verde, apunta en +X) ─────────────────────
-	// R(+90°, Z): rota el eje Y local para que apunte en +X global.
-	// T(+radius, 0, 0): desplaza al borde derecho de la esfera.
-	// El cilindro crece desde X=+radius hasta X=+(radius+cLen).
-	Cone* cyl2 = new Cone(cLen, cRad, cRad, 2, 12);
-	cyl2->setColor(glm::vec4(0.0f, 204.0f / 255.0f, 0.0f, 1.0f));
-	cyl2->setModelMat(
-		glm::translate(glm::mat4(1.0f), glm::vec3((float)radius, 0.0f, 0.0f))
-		* glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f)));
-	addEntity(cyl2);
+		// T * R: rotamos -90° en X (Y→Z), luego trasladamos al lado correspondiente
+		cyl->setModelMat(
+			glm::translate(glm::mat4(1.0f),
+				glm::vec3((float)(lado * offX), (float)offY, 0.0f))
+			* glm::rotate(glm::mat4(1.0f),
+				glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
+		addEntity(cyl);
+	}
 }
